@@ -3,6 +3,8 @@ spring:
     name: eureka-server
   cloud:
     config:
+      allow-override: true
+      initialize-on-context-refresh: true
 
 server:
   port: 8761
@@ -15,7 +17,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka-server:${server.port}/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 0
     enable-self-preservation: false
